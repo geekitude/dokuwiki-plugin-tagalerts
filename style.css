@@ -1,0 +1,78 @@
+.dokuwiki .tagerror,
+.dokuwiki .taginfo,
+.dokuwiki .tagsuccess,
+.dokuwiki .tagnotify {
+    border: 1px solid;
+    background-repeat: no-repeat;
+    font-size: 90%;
+    border-radius: 5px;
+}
+
+.dokuwiki .tagerror {
+    background-color: #fcc !important;
+    border-color: #ebb;
+}
+
+.dokuwiki .taginfo {
+    background-color: #ccf !important;
+    border-color: #bbe;
+}
+
+.dokuwiki .tagsuccess {
+    background-color: #cfc !important;
+    border-color: #beb;
+}
+
+.dokuwiki .tagnotify {
+    background-color: #ffc !important;
+    border-color: #eeb;
+}
+
+.dokuwiki div.tagerror,
+.dokuwiki div.taginfo,
+.dokuwiki div.tagsuccess,
+.dokuwiki div.tagnotify {
+    padding: 0 .5em 0 3em;
+    margin: -1.4em auto 1.8em auto;
+    background-position: 8px 50%;
+}
+
+.dokuwiki div.tagerror {
+    background-image: url(images/error.png);
+}
+
+.dokuwiki div.taginfo {
+    background-image: url(images/info.png);
+}
+
+.dokuwiki div.tagsuccess {
+    background-image: url(images/success.png);
+}
+
+.dokuwiki div.tagnotify {
+    background-image: url(images/notify.png);
+}
+
+.dokuwiki a.tagerror,
+.dokuwiki a.taginfo,
+.dokuwiki a.tagsuccess,
+.dokuwiki a.tagnotify {
+    padding: 0 3px 0 19px;
+    background-position: 1px 50%;
+}
+
+.dokuwiki a.tagerror {
+    background-image: url(../../images/error.png);
+}
+
+.dokuwiki a.taginfo {
+    background-image: url(../../images/info.png);
+}
+
+.dokuwiki a.tagsuccess {
+    background-image: url(../../images/success.png);
+}
+
+.dokuwiki a.tagnotify {
+    background-image: url(../../images/notify.png);
+}
