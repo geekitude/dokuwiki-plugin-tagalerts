@@ -1,2 +1,2 @@
 # dokuwiki-plugin-tagalerts
-Plugin to highlight specified tags or throw alrt messages (requires tag plugin)
+Plugin to highlight specified tags or throw alert messages (requires tag plugin)
