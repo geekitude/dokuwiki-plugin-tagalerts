@@ -24,8 +24,8 @@ class action_plugin_tagalerts extends DokuWiki_Action_Plugin{
         global $ID;
         global $conf;
  
-        $tags = plugin_load('helper', 'tag');
-        if(is_null($tags)) {
+        $tagplugin = plugin_load('helper', 'tag');
+        if(is_null($tagplugin)) {
             msg($this->getLang('tag_required'), -1);
             return false;
         }
@@ -78,7 +78,7 @@ class action_plugin_tagalerts extends DokuWiki_Action_Plugin{
     // Register the plugin conf file in ConfManager Plugin
     public function addConfigFile(Doku_Event $event, $params) {
         if (class_exists('ConfigManagerTwoLine')) {
-            $config = new ConfigManagerTwoLine('Tag Alerts', 'Description of my plugin', DOKU_PLUGIN . 'tagalerts/conf/tagalerts.conf');
+            $config = new ConfigManagerTwoLine('Tag Alerts', $this->getLang('description'), DOKU_PLUGIN . 'tagalerts/conf/tagalerts.conf');
             $event->data[] = $config;
         }
     }
