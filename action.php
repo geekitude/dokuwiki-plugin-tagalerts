@@ -39,9 +39,10 @@ class action_plugin_tagalerts extends DokuWiki_Action_Plugin{
                 // Get an array of page's tags
                 $this->pagetags = explode(',', $meta['content']);
             }
-        }       
+        }
         // Load special messages from ...tagalerts/conf/tagalerts.conf to global conf
-        $specAlertsFile = dirname(__FILE__).'/conf/tagalerts.conf';
+//        $specAlertsFile = dirname(__FILE__).'/conf/tagalerts.conf';
+        $specAlertsFile = DOKU_CONF.'tagalerts.conf';
         if (@file_exists($specAlertsFile)) {
             $conf['plugin']['tagalerts']['specAlerts'] = confToHash($specAlertsFile);
         }
@@ -116,7 +117,8 @@ class action_plugin_tagalerts extends DokuWiki_Action_Plugin{
     // Register the plugin conf file in ConfManager Plugin
     public function addConfigFile(Doku_Event $event, $params) {
         if (class_exists('ConfigManagerTwoLine')) {
-            $config = new ConfigManagerTwoLine('Tag Alerts', $this->getLang('description'), DOKU_PLUGIN . 'tagalerts/conf/tagalerts.conf');
+//            $config = new ConfigManagerTwoLine('Tag Alerts', $this->getLang('confdescription'), DOKU_PLUGIN . 'tagalerts/conf/tagalerts.conf');
+            $config = new ConfigManagerTwoLine('Tag Alerts', $this->getLang('confdescription'), DOKU_CONF . 'tagalerts.conf');
             $event->data[] = $config;
         }
     }
