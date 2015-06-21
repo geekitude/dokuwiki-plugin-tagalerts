@@ -3,5 +3,5 @@ author   Simon Delage
 email    simon.geekitude@gmail.com
 date     2015-06-20
 name     Tag Alerts
-desc     Throw alerts when some tags are detected (based on Dokuwiki system messages) or just styling tag list links
+desc     Throw alerts when some tags are detected (based on Dokuwiki system messages or just styling tag list links)
 url      https://www.dokuwiki.org/plugin:tagalerts
