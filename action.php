@@ -14,7 +14,7 @@ require_once (DOKU_PLUGIN . 'action.php');
 
 class action_plugin_tagalerts extends DokuWiki_Action_Plugin{
 
-    function register(&$controller) {
+    function register(Doku_Event_Handler $controller) {
         $controller->register_hook('TPL_METAHEADER_OUTPUT', 'AFTER', $this, 'init', array());
         $controller->register_hook('TPL_TOC_RENDER', 'AFTER', $this, 'alert', array());
         $controller->register_hook('PLUGIN_TAG_LINK', 'AFTER', $this, 'link', array());
