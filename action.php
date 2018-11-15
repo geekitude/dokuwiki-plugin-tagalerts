@@ -52,7 +52,7 @@ class action_plugin_tagalerts extends DokuWiki_Action_Plugin{
         global $conf;
         global $ACT;
 
-        if (($this->getConf('action') == "messages") & ($ACT == "show")) {
+        if ((($this->getConf('action') == "messages") or ($this->getConf('forcemsg') != null)) & ($ACT == "show")) {
             // Get an array of triggers from settings (make sure the list is well formated: no blanks between triggers and no '_' in triggers)
             $errorTriggers = explode(',',str_replace('_', ' ', str_replace(', ', ',', $this->getConf('error'))));
             $infoTriggers = explode(',',str_replace('_', ' ', str_replace(', ', ',', $this->getConf('info'))));
@@ -66,7 +66,7 @@ class action_plugin_tagalerts extends DokuWiki_Action_Plugin{
             $tagalerts['notify'] = array_values((array_intersect($this->pagetags, $notifyTriggers)));
             foreach($tagalerts as $type=>$tags) {
                 for ($i = 0; $i < count($tags); $i++) {
-                    if (isset($tags[$i]) {
+                    if ((isset($tags[$i])) and (($this->getConf('action') == "messages") or (strpos($this->getConf('forcemsg'), $tags[$i]) !== false))) {
                         // Alert from conf file
                         if (isset($conf['plugin']['tagalerts']['specAlerts'][$tags[$i]])) {
                             $msg = $conf['plugin']['tagalerts']['specAlerts'][$tags[$i]];

@@ -11,3 +11,4 @@ $conf['error']                  = '';       //comma separated list of tags for w
 $conf['info']                   = '';       //comma separated list of tags for wich a "tag info" should be thrown
 $conf['success']                = '';       //comma separated list of tags for wich a "tag success" should be thrown
 $conf['notify']                 = '';       //comma separated list of tags for wich a "tag notification" should be thrown
+$conf['forcemsg']               = '';       //comma separated list of tags for wich messages will be forced, even with `inline` setting

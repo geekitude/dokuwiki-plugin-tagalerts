@@ -11,3 +11,4 @@ $lang['error']                  = 'Liste de tags séparés par une virgule qui d
 $lang['info']                   = 'Liste de tags séparés par une virgule qui déclencheront une alerte basée sur les messages système d\'information.';
 $lang['success']                = 'Liste de tags séparés par une virgule qui déclencheront une alerte basée sur les messages système de succès.';
 $lang['notify']                 = 'Liste de tags séparés par une virgule qui déclencheront une alerte basée sur les messages système de notification..';
+$lang['forcemsg']               = 'Liste de tags séparés par une virgule pour lesquels une alerte sera déclenchés, même avec l\'option `inline`.';

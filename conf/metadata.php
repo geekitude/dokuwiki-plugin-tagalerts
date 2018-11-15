@@ -11,3 +11,4 @@ $meta['error']                  = array('string');
 $meta['info']                   = array('string');
 $meta['success']                = array('string');
 $meta['notify']                 = array('string');
+$meta['forcemsg']               = array('string');

@@ -13,3 +13,4 @@ $lang['error']                  = 'Comma separated list of tags that will trigge
 $lang['info']                   = 'Comma separated list of tags that will trigger an alert based on system information message.';
 $lang['success']                = 'Comma separated list of tags that will trigger an alert based on system success message.';
 $lang['notify']                 = 'Comma separated list of tags that will trigger an alert based on system notification message.';
+$lang['forcemsg']               = 'Comma separated list of tags for wich messages will be forced, even with `inline` setting.';
