@@ -2,7 +2,7 @@
 /**
  * French language file for Tag Alerts plugin
  * 
- * @author: Simon Delage <simon.geekitude@gmail.com>
+ * @author: Simon Delage <sdelage@gmail.com>
  * @license: CC Attribution-Share Alike 3.0 Unported <http://creativecommons.org/licenses/by-sa/3.0/>
  */
 

@@ -2,7 +2,7 @@
 /**
  * Tag Alerts plugin main file
  * 
- * @author: Simon Delage <simon.geekitude@gmail.com>
+ * @author: Simon Delage <sdelage@gmail.com>
  * @license: CC Attribution-Share Alike 3.0 Unported <http://creativecommons.org/licenses/by-sa/3.0/>
  */
 
@@ -53,7 +53,7 @@ class action_plugin_tagalerts extends DokuWiki_Action_Plugin{
         global $ACT;
 
         if (($this->getConf('action') == "messages") & ($ACT == "show")) {
-            // Get an array of notification triggers from 'notify' option (make sure the list is well formated: no blanks between triggers and no '_' in triggers)
+            // Get an array of triggers from settings (make sure the list is well formated: no blanks between triggers and no '_' in triggers)
             $errorTriggers = explode(',',str_replace('_', ' ', str_replace(', ', ',', $this->getConf('error'))));
             $infoTriggers = explode(',',str_replace('_', ' ', str_replace(', ', ',', $this->getConf('info'))));
             $successTriggers = explode(',',str_replace('_', ' ', str_replace(', ', ',', $this->getConf('success'))));
@@ -64,16 +64,18 @@ class action_plugin_tagalerts extends DokuWiki_Action_Plugin{
             $tagalerts['info'] = array_values((array_intersect($this->pagetags, $infoTriggers)));
             $tagalerts['success'] = array_values((array_intersect($this->pagetags, $successTriggers)));
             $tagalerts['notify'] = array_values((array_intersect($this->pagetags, $notifyTriggers)));
-            foreach($tagalerts as $type=>$tag) {
-                if (isset($tag[0])) {
-                    // Alert from conf file
-                    if (isset($conf['plugin']['tagalerts']['specAlerts'][$tag[0]])) {
-                        $msg = $conf['plugin']['tagalerts']['specAlerts'][$tag[0]];
-                    // Or from localized $conf
-                    } else {
-                        $msg = $this->getLang('tagalerts').$tag[0].".";
+            foreach($tagalerts as $type=>$tags) {
+                for ($i = 0; $i < count($tags); $i++) {
+                    if (isset($tags[$i]) {
+                        // Alert from conf file
+                        if (isset($conf['plugin']['tagalerts']['specAlerts'][$tags[$i]])) {
+                            $msg = $conf['plugin']['tagalerts']['specAlerts'][$tags[$i]];
+                        // Or from localized $conf
+                        } else {
+                            $msg = $this->getLang('tagalerts').$tags[$i].".";
+                        }
+                        echo '<div class="tag'.$type.'">'.hsc($msg).'</div>';
                     }
-                    echo '<div class="tag'.$type.'">'.hsc($msg).'</div>';
                 }
             }
         }
