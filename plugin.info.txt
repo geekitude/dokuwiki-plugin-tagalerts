@@ -1,7 +1,7 @@
 base     tagalerts
 author   Simon Delage
 email    sdelage@gmail.com
-date     2018-11-15
+date     2018-12-13
 name     Tag Alerts
 desc     Throw alerts when some tags are detected (based on Dokuwiki system messages or just styling tag list links)
 url      https://www.dokuwiki.org/plugin:tagalerts
