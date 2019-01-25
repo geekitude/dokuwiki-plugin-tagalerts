@@ -2,7 +2,7 @@
 /**
  * Tag Alerts plugin main file
  * 
- * @author: Simon Delage <sdelage@gmail.com>
+ * @author   Simon DELAGE <sdelage@gmail.com>
  * @license: CC Attribution-Share Alike 3.0 Unported <http://creativecommons.org/licenses/by-sa/3.0/>
  */
 
