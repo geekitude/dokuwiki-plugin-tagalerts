@@ -41,7 +41,6 @@ class action_plugin_tagalerts extends DokuWiki_Action_Plugin{
             }
         }
         // Load special messages from ...tagalerts/conf/tagalerts.conf to global conf
-//        $specAlertsFile = dirname(__FILE__).'/conf/tagalerts.conf';
         $specAlertsFile = DOKU_CONF.'tagalerts.conf';
         if (@file_exists($specAlertsFile)) {
             $conf['plugin']['tagalerts']['specAlerts'] = confToHash($specAlertsFile);
@@ -66,10 +65,11 @@ class action_plugin_tagalerts extends DokuWiki_Action_Plugin{
             $tagalerts['notify'] = array_values((array_intersect($this->pagetags, $notifyTriggers)));
             foreach($tagalerts as $type=>$tags) {
                 for ($i = 0; $i < count($tags); $i++) {
-                    if ((isset($tags[$i])) and (($this->getConf('action') == "messages") or (strpos($this->getConf('forcemsg'), $tags[$i]) !== false))) {
+                    $underscored = str_replace(' ', '_', $tags[$i]);
+                    if ((isset($tags[$i])) and (($this->getConf('action') == "messages") or (strpos($this->getConf('forcemsg'), $underscored) !== false))) {
                         // Alert from conf file
-                        if (isset($conf['plugin']['tagalerts']['specAlerts'][$tags[$i]])) {
-                            $msg = $conf['plugin']['tagalerts']['specAlerts'][$tags[$i]];
+                        if (isset($conf['plugin']['tagalerts']['specAlerts'][$underscored])) {
+                            $msg = $conf['plugin']['tagalerts']['specAlerts'][$underscored];
                         // Or from localized $conf
                         } else {
                             $msg = $this->getLang('tagalerts').$tags[$i].".";
@@ -119,7 +119,6 @@ class action_plugin_tagalerts extends DokuWiki_Action_Plugin{
     // Register the plugin conf file in ConfManager Plugin
     public function addConfigFile(Doku_Event $event, $params) {
         if (class_exists('ConfigManagerTwoLine')) {
-//            $config = new ConfigManagerTwoLine('Tag Alerts', $this->getLang('confdescription'), DOKU_PLUGIN . 'tagalerts/conf/tagalerts.conf');
             $config = new ConfigManagerTwoLine('Tag Alerts', $this->getLang('confdescription'), DOKU_CONF . 'tagalerts.conf');
             $event->data[] = $config;
         }
