@@ -33,8 +33,9 @@
 .dokuwiki div.tagsuccess,
 .dokuwiki div.tagnotify {
     padding: 0 .5em 0 3em;
-    margin: .5em auto;
+    margin: 0 auto .5em  0;
     background-position: 8px 50%;
+    display: table;
 }
 
 .dokuwiki div.tagerror {
